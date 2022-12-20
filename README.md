@@ -47,12 +47,13 @@ npm install --save-dev @bobbymannino/svelte-tooltip
 <!-- +page.svelte -->
 
 <p>
-	This is an example usage of the <Tooltip tip="Isn't is cool!" background="#ffffff" color="#000000"><b>Svelte Tooltip</b></Tooltip> package from @bobbymannino
+	This is an example usage of the <Tooltip tip="<h2>Isn't is cool!</h2>" background="#ffffff" color="#000000"><b>Svelte Tooltip</b></Tooltip> package from @bobbymannino
 </p>
 ```
 
 | Property Name | Property Type                         | Property Default |
 | :------------ | :------------------------------------ | :--------------- |
+| tip           | 'any HTML represented as a string     |                  |
 | background    | any CSS color represented as a string | '#000000cc'      |
 | color         | any CSS color represented as a string | '#ffffff'        |
 

@@ -14,7 +14,7 @@ $:
 
 <div>
 	<slot />
-	<span bind:this={tooltip} data-x={x} data-y={y} style="--text-color: {color}; --background-color: {background}">{tip}</span>
+	<span bind:this={tooltip} data-x={x} data-y={y} style="--text-color: {color}; --background-color: {background}">{@html tip}</span>
 </div>
 
 <style>
@@ -35,6 +35,9 @@ $:
 		pointer-events: none;
 		text-align: center;
 		opacity: 0;
+		line-height: 1.25;
+		font-size: 1rem;
+		font-weight: normal;
 		transition: opacity 200ms ease, translate 200ms ease;
 	}
 
