@@ -4,14 +4,16 @@ export let background = "#000000cc";
 export let color = "#ffffff";
 let tooltip;
 const EDGE_MARGIN = 16;
+let scroll = 0;
 $:
   tooltipBox = tooltip?.getBoundingClientRect();
 $:
-  y = tooltipBox?.top < EDGE_MARGIN ? "below" : "above";
+  y = browser && scroll && tooltipBox?.top < EDGE_MARGIN ? "below" : "above";
 $:
-  x = browser && tooltipBox?.right + EDGE_MARGIN > window.innerWidth ? "right" : tooltipBox?.left > EDGE_MARGIN ? "middle" : "left";
+  x = browser && scroll && tooltipBox?.right + EDGE_MARGIN > window.innerWidth ? "right" : tooltipBox?.left > EDGE_MARGIN ? "middle" : "left";
 </script>
 
+<svelte:window on:scroll={() => (scroll = window.scrollY)} />
 <div>
 	<slot />
 	<span bind:this={tooltip} data-x={x} data-y={y} style="--text-color: {color}; --background-color: {background}">{@html tip}</span>

@@ -1,5 +1,9 @@
 # **Changelog**
 
+## **v1.1.1**
+
+-   [fix] auto positioning changes on scroll
+
 ## **v1.1.0**
 
 -   [fix] the element the tooltip is doesn't effect the style of the tooltip
